@@ -24,11 +24,3 @@ def validate_discount_code(discount_code):
         return True #, "es compatible con heladoFrozen"
     else:
         return False #, "no es compatible con ninguno"
-
-
-if __name__ == "__main__":
-    
-    code = input("Codigo de descuento: ")
-    validate_func= validate_discount_code(code)
-
-    print(validate_func)
