@@ -20,17 +20,16 @@ _PRODUCT_DF = pd.DataFrame(
 
 
 def is_product_available(product_name, quantity):
+  stock = _PRODUCT_DF[(_PRODUCT_DF['product_name'] == product_name) & (_PRODUCT_DF['quantity'] >= quantity)]
+  return len(stock) > 0
 
-  if quantity > 0:
-    return "HAY STOCK"
-  else:
-    return "NO HAY STOCK"
-'''buscar una funcion en pandas que busque '''
 
 # <<<<<<<<<<<<<<<<<<<MAIN>>>>>>>>>>>>>>>>>>>>>>
 
 if __name__ == "__main__":
-  print("Buenos dias tenemos lo siguentes helados para pedir:")
+  print(is_product_available("Chocolate", 4))
+  print(is_product_available("Chocolate", 2))
+'''  print("Buenos dias tenemos lo siguentes helados para pedir:")
   print("#############################")
 
   _PRODUCT_DF = _PRODUCT_DF.rename(columns={'product_name':'Nombre','quantity': 'Cantidad'})
@@ -47,5 +46,5 @@ if __name__ == "__main__":
   vartest=busqueda['Cantidad']
 
   StockExistente = is_product_available(eleccion_cliente, vartest)
-  print(StockExistente)
+  print(StockExistente)'''
 
