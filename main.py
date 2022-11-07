@@ -5,13 +5,13 @@ from ejercicio1 import GeoAPI
 from ejercicio2 import is_product_available
 from ejercicio3 import validate_discount_code
 
-
+# ejercicio #1
 if  GeoAPI == True:
     print("Bienvenida 1")
 else:
     print("Bienvenida 2")
 
-# ACA VA EL EJERCICIO 2
+# Ejercicio #2
 print('Que sabor queres tenemos: ')
 
 _PRODUCT_DF = pd.DataFrame(
@@ -33,8 +33,8 @@ _PRODUCT_DF = pd.DataFrame(
 
 print(_PRODUCT_DF.rename(columns={'product_name': 'Nombre', 'quantity': 'Cant'}).to_string(index=False))
 
-condicional = True
-while condicional:
+
+while True:
     sabor = input("Que sabor queres? ")
     cantidad = int(input(f"Cuantos de {sabor} queres? "))
     is_product_available(sabor, cantidad)
@@ -45,7 +45,7 @@ while condicional:
         print("No tenemos stock suficiente para esa cantidad!")
         pass
 
-
+# ejercicio #3
 while True:
     code = input("Codigo de descuento: ")
     if validate_discount_code(code) == True:
@@ -56,9 +56,3 @@ while True:
         pass
 
 print("SU PEDIDO A SIDO CONFIRMADO!")
-
-
-
-
-
-
